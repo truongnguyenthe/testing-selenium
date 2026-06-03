@@ -1,0 +1,45 @@
+============================================================
+  HƯỚNG DẪN CHẠY TEST — NHÓM 6
+  Website test: https://www.saucedemo.com
+============================================================
+
+BƯỚC 1 — Cài thư viện (chỉ làm 1 lần)
+---------------------------------------
+Mở Command Prompt, vào thư mục TestingSelemium rồi chạy:
+
+    pip install -r requirements.txt
+
+=> Lệnh này sẽ tự cài Selenium, pytest, và webdriver-manager
+=> webdriver-manager sẽ tự tải ChromeDriver đúng phiên bản
+   khi chạy test lần đầu (cần internet)
+
+
+BƯỚC 2 — Chạy toàn bộ test
+----------------------------
+    python run_all.py
+
+Hoặc dùng pytest trực tiếp:
+
+    pytest tests/ --html=report.html --self-contained-html -v
+
+Sau khi xong, mở file report.html để xem kết quả đẹp.
+
+
+BƯỚC 3 — Chạy từng test riêng
+-------------------------------
+    pytest tests/test_login.py -v           # TEST 1: Đăng nhập
+    pytest tests/test_cart.py -v            # TEST 2: Giỏ hàng
+    pytest tests/test_inventory.py -v       # TEST 3: Sắp xếp sản phẩm
+    pytest tests/test_checkout.py -v        # TEST 4: Thanh toán
+    pytest tests/test_menu_logout.py -v     # TEST 5: Menu & Đăng xuất
+    pytest tests/test_access_protection.py -v  # TEST 6: Bảo vệ truy cập
+    pytest tests/test_performance.py -v     # TEST 7: Hiệu năng
+
+
+LỖI THƯỜNG GẶP
+--------------
+- Lần đầu chạy hơi chậm: bình thường, đang tải ChromeDriver
+- Lỗi "No module named selenium": chạy lại pip install -r requirements.txt
+- Chrome bị crash: thêm --headless vào options trong utils.py
+
+============================================================
