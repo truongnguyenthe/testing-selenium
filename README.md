@@ -206,10 +206,3 @@ vào phần cấu hình Chrome Options trong file `utils.py`.
 
 ---
 
-## Tác giả
-
-**Trương Nguyễn Thế**
-
-Sinh viên Công nghệ Thông tin – Đại học Phenikaa
-
-Môn học: Software Testing
